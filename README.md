@@ -132,5 +132,6 @@ List view.builder 是給"大量"垂直資料的
 ![](https://i.imgur.com/aD6gwxc.png)
 
 * 使用畫面
+
 ![](https://i.imgur.com/AXIk0Zn.png)
 
