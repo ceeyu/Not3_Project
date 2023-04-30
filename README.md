@@ -65,7 +65,40 @@ List view.builder 是給"大量"垂直資料的
 * [GeeksForGeeksAdvanced範例](https://www.geeksforgeeks.org/flutter-advanced-drawer/)
 
 ## Flutter – CircleAvatar Widget
-* 參考: [CircleAvatar](https://www.geeksforgeeks.org/flutter-circleavatar-widget/)
+* 參考Docs: [CircleAvatar](https://www.geeksforgeeks.org/flutter-circleavatar-widget/)
+
+## CupertinoSwitch
+![](https://i.imgur.com/Sww9xh8.png)
+
+* 參考Docs:[CupertinoSwitch](https://api.flutter.dev/flutter/cupertino/CupertinoSwitch-class.html)
+* [自己Github的官方CupertinoSwitch Demo Code實踐](https://github.com/ceeyu/flutter_Not3-main_ONLY/blob/main/CupertinoSwitch.dart)
+
+## 「對齊」相關
+### flutter layout concepts
+![](https://i.imgur.com/xb3rLk6.png)
+
+> [Basic Flutter layout concepts](https://docs.flutter.dev/codelabs/layout-basics)
+### Align
+
+* 針對一個Widget的對齊
+![](https://i.imgur.com/x0eNP34.png)
+
+> [How to align single widgets in Flutter?](https://stackoverflow.com/questions/53716571/how-to-align-single-widgets-in-flutter)
+
+### Spacer()
+* 類似網頁設計的< br >
+![](https://i.imgur.com/C2ewotW.png)
+> [FLUTTER | Right Align not working](https://stackoverflow.com/questions/50640161/flutter-right-align-not-working)
+
+![](https://i.imgur.com/QDIVf1X.png)
+* 呈現效果
+
+### Wrap()
+* 可設定固定間隔的space
+![](https://i.imgur.com/2PQi2hH.png)
+> [FLUTTER | Right Align not working](https://stackoverflow.com/questions/50640161/flutter-right-align-not-working)
+
+
 # 肆、線上編譯器"Dartpad"
 
 # 伍、Package
@@ -132,6 +165,90 @@ List view.builder 是給"大量"垂直資料的
 ![](https://i.imgur.com/aD6gwxc.png)
 
 * 使用畫面
-
 ![](https://i.imgur.com/AXIk0Zn.png)
 
+# 拾、Samples
+
+* [Web Sockets Sample文件](https://docs.flutter.dev/cookbook/networking/web-sockets)
+
+# 拾壹、動畫系列(Animation and motion)
+
+![](https://i.imgur.com/hZWUGaR.png)
+![](https://i.imgur.com/e7nKdMW.png)
+![](https://i.imgur.com/g5UETPK.png)
+![](https://i.imgur.com/zjIOQy3.png)
+![](https://i.imgur.com/D5uQtNY.png)
+
+* 參自[Animation and motion widgets](https://docs.flutter.dev/ui/widgets/animation)
+## Animated Align
+
+|  動動前 | 按一下動動後 |
+| -------- | -------- |
+| ![](https://i.imgur.com/1uaB9fz.png)     | ![](https://i.imgur.com/NG3M63Q.png)  |
+
+* [Animation Alignment Widgets(線性動動) Docs](https://api.flutter.dev/flutter/widgets/AnimatedAlign-class.html)
+* [自己Github的官方Animation Alignment Demo Code實踐](https://github.com/ceeyu/flutter_Not3-main_ONLY/blob/main/AnimatedAlign.dart)
+
+## AnimatedBuilder
+![](https://i.imgur.com/iLkt2Vx.png)
+
+* [AnimatedBuilder (旋轉動動) Docs](https://api.flutter.dev/flutter/widgets/AnimatedBuilder-class.html)
+* [自己Github的官方AnimatedBuilder Demo Code實踐](https://github.com/ceeyu/flutter_Not3-main_ONLY/blob/main/AnimatedBuilder.dart)
+
+## AnimatedContainer
+|  動動前 | 按一下動動後 |
+| -------- | -------- |
+|![](https://i.imgur.com/xThL78M.png)| ![](https://i.imgur.com/POtAEn4.png) |
+* [AnimatedContainer (Container動動) Docs](https://api.flutter.dev/flutter/widgets/AnimatedContainer-class.html)
+* [自己Github的官方AnimatedContainer Demo Code實踐](https://github.com/ceeyu/flutter_Not3-main_ONLY/blob/main/AnimatedContainer.dart)
+
+# 拾貳、Asynchonous相關
+![](https://i.imgur.com/x4tgu7S.png)
+
+參自[Async widgets](https://docs.flutter.dev/ui/widgets/async)
+
+## FutureBuilder
+|  等待前 | 等待後 |
+| -------- | -------- |
+|![](https://i.imgur.com/HrEZBTX.png)| ![](https://i.imgur.com/V6XV9Va.png) |
+* [FutureBuilder 官方Docs](https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html)
+* [自己Github的官方FutureBuilder Demo Code實踐](https://github.com/ceeyu/flutter_Not3-main_ONLY/blob/main/FutureBuilder.dart)
+
+## StreamBuilder
+
+| 等待 | 第一型 | 第二型 |
+| -------- | -------- | -------- |
+| ![](https://i.imgur.com/45DRX4z.png)| ![](https://i.imgur.com/P9oEQsP.png)| ![](https://i.imgur.com/yJpJrdv.png) |
+
+* [StreamBuilder 官方Docs](https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html)
+* [自己Github的官方StreamBuilder Demo Code實踐](https://github.com/ceeyu/flutter_Not3-main_ONLY/blob/main/StreamBuilder.dart)
+
+# 拾貳、官方範例running
+![](https://i.imgur.com/goIzUy5.png)
+> [github flutter/website/examples/layout/](https://github.com/flutter/website/tree/main/examples/layout)
+
+* running範例
+![](https://i.imgur.com/V2vnTMk.png)
+
+![](https://i.imgur.com/TVyPZ4O.png)
+
+![](https://i.imgur.com/iy7B4hg.png)
+
+* 結束後再修改`lib`內的文件到對應example
+
+## flutter gallery
+* 特色
+![](https://i.imgur.com/cBfbenZ.png)
+* 安裝步驟:
+
+    1. flutter channel master
+    2. flutter upgrade
+    3. cd gallery-main
+    4. flutter pub get
+    5. flutter run
+![](https://i.imgur.com/QG7rxTe.png)
+
+* 安裝完畫面
+![](https://i.imgur.com/QPoawOv.png)
+
+> [Github: flutter gallery](https://github.com/flutter/gallery/tree/main)
