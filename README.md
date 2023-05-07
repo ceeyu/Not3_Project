@@ -98,6 +98,10 @@ List view.builder 是給"大量"垂直資料的
 ![](https://i.imgur.com/2PQi2hH.png)
 > [FLUTTER | Right Align not working](https://stackoverflow.com/questions/50640161/flutter-right-align-not-working)
 
+### Padding
+* [Flutter – Padding Widget](https://www.geeksforgeeks.org/flutter-padding-widget/)，會將物件的周圍留空白
+![](https://hackmd.io/_uploads/Syp8qGHN3.png)
+
 
 # 肆、線上編譯器"Dartpad"
 
@@ -105,6 +109,25 @@ List view.builder 是給"大量"垂直資料的
 
 * [pub.dev](https://pub.dev/)
 
+### dropdown_search 5.0.6
+1. 新增dependency
+2. 輸入`import 'package:dropdown_search/dropdown_search.dart'`
+![](https://hackmd.io/_uploads/ByISNQrEn.png)
+
+* [dropdown_search 5.0.6 ](https://pub.dev/packages/dropdown_search)
+![](https://hackmd.io/_uploads/HJgS7QSV3.png)
+
+### Dio
+
+![](https://hackmd.io/_uploads/rkcbP7S43.png)
+![](https://hackmd.io/_uploads/B1-EDmrE2.png)
+
+1. 輸入: `dart pub add dio`，在dependency新增latest version
+![](https://hackmd.io/_uploads/S1TSvXBN2.png)
+
+2. 在專案中新增`import 'package:dio/dio.dart';`
+
+* [Dio Dropdown Github](https://github.com/salim-lachdhaf/searchable_dropdown/tree/master/example)
 # 陸、實機執行
 * [如何將 flutter 執行在模擬器與實機上](https://kulan.dev/b200602/#setp-4-%E5%9F%B7%E8%A1%8C%E5%9C%A8-ios-%E5%AF%A6%E6%A9%9F)
 
@@ -123,6 +146,9 @@ List view.builder 是給"大量"垂直資料的
 ![](https://i.imgur.com/DTq9kQH.png)
 
 * drawer: 左上角，且在appbar()外面
+
+
+
 
 ## Cookbook範例[Cookbook](https://docs.flutter.dev/cookbook)
 * Snackbar: [Display a snackbar](https://docs.flutter.dev/cookbook/design/snackbars)
@@ -144,6 +170,10 @@ List view.builder 是給"大量"垂直資料的
 ![](https://i.imgur.com/QxyNNL8.png)
 
 ![](https://i.imgur.com/Eqfi4jQ.png)
+
+* 直接用指令開啟並由UI介面按下開發人員專用的方式
+![](https://i.imgur.com/B4FoiHY.png)
+
 
 * yaml裡面的更動
     * (1)先去google font載想要的fonts
