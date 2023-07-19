@@ -104,10 +104,8 @@ class _LoginPageState extends State<LoginPage> {
               final item = snapshot.data![index];
               return ListTile(
                 isThreeLine: true,
-                title: Text('sender_id:${item['sender_firstname']}'),
-                subtitle: Text( 'receiver_firstname: :${item['receiver_firstname']}' 'send_time:${item['send_time']}' 'chat_data :${item['chat_data']}'),
-
-                
+                title: Text('sender_firstname:${item['sender_firstname']}' '   ' 'receiver_firstname: :${item['receiver_firstname']}'),
+                subtitle: Text(  'send_time:${item['send_time']}' 'chat_data :${item['chat_data']}'),
               );
             },
           );
