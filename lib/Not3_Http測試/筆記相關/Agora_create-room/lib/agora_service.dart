@@ -1,102 +1,3 @@
- /*
-import 'package:fastboard_flutter_example/agora_model.dart';
-
-import 'package:flutter/material.dart';
-
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
-  @override
-  // ignore: library_private_types_in_public_api
-  _LoginPageState createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
-  final TextEditingController _enterfirstnamecontroller =
-      TextEditingController();
-
-  //final TextEditingController _chatdatacontroller = TextEditingController();
-  Future<List<dynamic>>? _futureLogin;
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Agora API Information(Post) Post'),
-      ),
-      body: Container(
-        alignment: Alignment.center,
-        padding: const EdgeInsets.all(8),
-        child: (_futureLogin == null) ? buildColumn() : buildFutureBuilder(),
-      ),
-    );
-  }
-
-  Column buildColumn() {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        SizedBox(
-          width: 300,
-          height: 80,
-          child: TextField(
-            controller: _enterfirstnamecontroller,
-            decoration: const InputDecoration(
-              hintText: 'Enter Account for region',
-              labelText: "地區",
-              prefixIcon: Icon(Icons.person),
-            ),
-          ),
-        ),
-        
-        SizedBox(
-          width: 150,
-          height: 48,
-          child: ElevatedButton(
-            onPressed: () {
-              setState(() {
-                _futureLogin = createLogin(_enterfirstnamecontroller.text
-                    );
-              });
-            },
-            child: const Text('Show'),
-          ),
-        ),
-      ],
-    );
-  }
-
-  FutureBuilder<List<dynamic>> buildFutureBuilder() {
-    return FutureBuilder<List<dynamic>>(
-      future: _futureLogin,
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const CircularProgressIndicator();
-        } else if (snapshot.hasData) {
-          return ListView.builder(
-            padding: const EdgeInsets.all(20),
-            itemCount: snapshot.data!.length,
-            itemBuilder: (context, index) {
-              final item = snapshot.data![index];
-              return ListTile(
-                
-                title: Text('roomToken : ${item['roomToken']} AppID : ${item['appIdentifier']} '),
-                subtitle: Text(  'UUID : ${item['roomData']['uuid']}'),
-              );
-            },
-          );
-        } else if (snapshot.hasError) {
-          return Text('${snapshot.error}');
-        } else {
-          return const Text('No data available');
-        }
-      },
-    );
-  }
-}
-
- */
-
-
-// /*
 import 'package:flutter/material.dart';
 import 'package:fastboard_flutter_example/agora_model.dart';
 import 'package:fastboard_flutter_example/quick_start.dart';
@@ -127,6 +28,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  // 顯示輸入地區的TextField和提交按鈕的Column
   Column buildColumn() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -148,16 +50,18 @@ class _LoginPageState extends State<LoginPage> {
           height: 48,
           child: ElevatedButton(
             onPressed: () async {
+              // 當按鈕被點擊時，將輸入的地區值傳遞到createLogin函數中發送API請求
               setState(() {
                 _futureLogin = createLogin(_regionController.text);
               });
               try {
                 var loginModels = await _futureLogin;
                 if (loginModels != null && loginModels.isNotEmpty) {
-                  // 更新constant.dart中的值
+                  // 如果API回傳了有效數據，則更新constant.dart中的值
                   APP_ID = loginModels[0].appIdentifier;
                   ROOM_UUID = loginModels[0].uuid;
                   ROOM_TOKEN = loginModels[0].roomToken;
+                  // 導航到QuickStartBody頁面執行功能
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => QuickStartBody()),
@@ -167,32 +71,36 @@ class _LoginPageState extends State<LoginPage> {
                   print('API response is empty');
                 }
               } catch (e) {
+                // 處理錯誤情況，例如API請求失敗
                 print('Error: $e');
               }
             },
-            child: const Text('Show'),
+            child: const Text('Show'), // 按鈕上的文字
           ),
         ),
       ],
     );
   }
 
+  // 顯示處理API請求結果的FutureBuilder
   FutureBuilder<List<LoginModel>> buildFutureBuilder() {
     return FutureBuilder<List<LoginModel>>(
       future: _futureLogin,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
+          // 當API請求進行中時顯示一個進度指示器
           return const CircularProgressIndicator();
         } else if (snapshot.hasData) {
-          // 不需要再重複顯示頁面，直接導航到QuickStartBody
+          // 如果API請求成功且回傳了有效數據，不需要再重複顯示頁面，直接導航到QuickStartBody
           return Container();
         } else if (snapshot.hasError) {
+          // 處理API請求錯誤的情況
           return Text('${snapshot.error}');
         } else {
+          // 處理API回傳資料為空的情況
           return const Text('No data available');
         }
       },
     );
   }
 }
-// */
