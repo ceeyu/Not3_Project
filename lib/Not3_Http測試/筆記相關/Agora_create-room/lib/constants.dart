@@ -1,12 +1,3 @@
-/*
-const String APP_ID = 'kJywQCFnEe6hOWmX-Qd9og/2fW1kGMLOKIqCQ';
-const String ROOM_UUID = "56530bc029d511ee928e6554980fdf2f";
-const String ROOM_TOKEN =
-    "NETLESSROOM_YWs9UlFDSFJ4RzIxX2NickMtbSZub25jZT0xNjkwMTcwNjc1NDM3MDAmcm9sZT0wJnNpZz0yMjI5YWVjNWY5YzRjNzVlM2JkM2E5YzM3MGU1ODQzYzBiNWMyMmU2YmZkMjkwZGY2ZTZkNmIwY2JiYmE5Zjg1JnV1aWQ9NTY1MzBiYzAyOWQ1MTFlZTkyOGU2NTU0OTgwZmRmMmY";
-const String UNIQUE_CLIENT_ID = "123456";
-*/
-
-
 String APP_ID = ''; // 初始值留空
 String ROOM_UUID = ''; // 初始值留空
 String ROOM_TOKEN = ''; // 初始值留空
