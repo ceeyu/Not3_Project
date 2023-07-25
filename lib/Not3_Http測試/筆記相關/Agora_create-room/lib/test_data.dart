@@ -1,22 +1,16 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+// 定義CloudFile類，用於儲存雲端檔案的資訊
 class CloudFile {
-  String type;
-
-  String url;
-
-  String name;
-
-  String? taskUUID;
-
-  String? taskToken;
-
-  int? width;
-
-  int? height;
+  String type; // 檔案類型
+  String url; // 檔案URL
+  String name; // 檔案名稱
+  String? taskUUID; // 任務UUID
+  String? taskToken; // 任務令牌
+  int? width; // 圖片寬度
+  int? height; // 圖片高度
 
   CloudFile({
     required this.type,
@@ -28,19 +22,21 @@ class CloudFile {
     this.taskToken = null,
   });
 
+  // 從JSON解析資料，並建立CloudFile物件
   CloudFile.fromJson(Map<String, dynamic> map)
       : this(
-          type: map["type"],
-          name: map["name"],
-          url: map["url"],
-          taskUUID: map["taskUUID"],
-          taskToken: map["taskToken"],
-          width: map["width"],
-          height: map["height"],
+          type: map["type"], // 從JSON中獲取檔案類型
+          name: map["name"], // 從JSON中獲取檔案名稱
+          url: map["url"], // 從JSON中獲取檔案URL
+          taskUUID: map["taskUUID"], // 從JSON中獲取任務UUID（如果有的話）
+          taskToken: map["taskToken"], // 從JSON中獲取任務令牌（如果有的話）
+          width: map["width"], // 從JSON中獲取圖片寬度（如果有的話）
+          height: map["height"], // 從JSON中獲取圖片高度（如果有的話）
         );
 }
 
 class TestData {
+  // 定義測試用的JSON資料，包含多個雲端檔案的資訊
   static var kCloudJson = '''
         [{
             "type": "pdf",
@@ -73,10 +69,12 @@ class TestData {
         }]
         ''';
 
+  // 解析JSON資料為List<CloudFile>
   static List<CloudFile> kCloudFiles = (jsonDecode(kCloudJson) as List)
       .map((e) => CloudFile.fromJson(e))
       .toList();
 
+  // 定義不同檔案類型的SVG圖示
   static Widget iconAdd = SvgPicture.asset(
     "assets/ic_cloud_add.svg",
   );
